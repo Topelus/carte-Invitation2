@@ -3,9 +3,44 @@ function closeWarning() {
     document.getElementById("warning").style.display = "none";
 }
 
+function initConfetti() {
+    const header = document.querySelector('.carte_section.carte_header');
+    const layer = header?.querySelector('.confetti-layer');
+
+    if (!header || !layer) return;
+
+    layer.innerHTML = '';
+    const pieceCount = 40;
+    const colors = ['#8b4513', '#a0522d', '#c19a3d', '#d4af37', '#b8860b'];
+
+    for (let i = 0; i < pieceCount; i++) {
+        const piece = document.createElement('span');
+        piece.className = 'confetti-piece';
+
+        const size = 6 + Math.random() * 8;
+        const duration = 4 + Math.random() * 4;
+        const delay = Math.random() * -8;
+        const xStart = (Math.random() - 0.5) * 220;
+        const xEnd = (Math.random() - 0.5) * 220;
+
+        piece.style.width = `${size}px`;
+        piece.style.height = `${size * 1.4}px`;
+        piece.style.left = `${Math.random() * 100}%`;
+        piece.style.setProperty('--duration', `${duration}s`);
+        piece.style.setProperty('--delay', `${delay}s`);
+        piece.style.setProperty('--x-start', `${xStart}px`);
+        piece.style.setProperty('--x-end', `${xEnd}px`);
+        piece.style.background = colors[Math.floor(Math.random() * colors.length)];
+        piece.style.transform = `rotate(${Math.random() * 360}deg)`;
+
+        layer.appendChild(piece);
+    }
+}
+
 // Affiche le message après chargement de la page
 window.onload = () => {
     document.getElementById("warning").style.display = "flex";
+    initConfetti();
 };
 
 const observer = new IntersectionObserver((entries) => {

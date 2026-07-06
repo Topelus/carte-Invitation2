@@ -1,0 +1,412 @@
+/* Typography improvements */
+
+:root {
+    --font-display: 'Playfair Display', serif;
+    --font-text: 'Lora', 'Montserrat', sans-serif;
+    --font-heading: 'Montserrat', sans-serif;
+    --font-cursive: 'Great Vibes', cursive;
+    --gold: #d4af37;
+    --gold-light: #ffd54f;
+    --gold-dark: #bd8128;
+}
+
+/* =============================================
+   HEADER (carte_header)
+   ============================================= */
+
+section.carte_header {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 60px 8%;
+    box-sizing: border-box;
+}
+
+section.carte_header .header-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    text-align: left;
+    z-index: 10;
+    position: relative;
+    max-width: 550px;
+    width: 100%;
+}
+
+/* congrats section */
+.congrats-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.congrats-text {
+    font-family: var(--font-cursive);
+    font-size: clamp(3.2rem, 9vw, 5.5rem);
+    font-weight: 400;
+    color: var(--color-primary);
+    line-height: 1.1;
+}
+
+.gold-swoosh-wrapper {
+    width: clamp(180px, 45vw, 290px);
+    height: 12px;
+    margin-top: -8px;
+}
+
+.gold-swoosh {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+/* name banner */
+.name-banner {
+    display: flex;
+    align-items: stretch;
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    margin: 15px 0;
+    box-shadow: 0 4px 10px rgba(75, 2, 9, 0.25);
+    width: fit-content;
+    max-width: 100%;
+}
+
+.name-banner .gold-stripe {
+    width: 15px;
+    background: linear-gradient(180deg, var(--gold-light) 0%, var(--gold-dark) 100%);
+    flex-shrink: 0;
+}
+
+.name-banner .name-text {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: clamp(0.95rem, 3.5vw, 1.25rem);
+    padding: 10px 18px;
+    line-height: 1.3;
+    letter-spacing: 0.5px;
+}
+
+/* job title */
+.job-title {
+    font-family: var(--font-heading);
+    font-size: clamp(1.1rem, 4vw, 1.6rem);
+    font-weight: 500;
+    color: var(--color-primary);
+    margin-left: 15px;
+    margin-bottom: 25px;
+    letter-spacing: 0.5px;
+}
+
+/* quote section */
+.quote-container {
+    position: relative;
+    padding-left: 20px;
+    margin-top: 30px;
+    max-width: 480px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.quote-container .quote-icon {
+    font-family: var(--font-display);
+    font-size: 5rem;
+    font-weight: 700;
+    color: var(--gold-light);
+    line-height: 1;
+    position: absolute;
+    top: -45px;
+    left: -8px;
+    pointer-events: none;
+    user-select: none;
+    opacity: 0.9;
+}
+
+.quote-container .quote-text {
+    font-family: 'Lora', serif;
+    font-size: clamp(0.95rem, 3vw, 1.15rem);
+    font-weight: 700;
+    line-height: 1.6;
+    color: var(--color-primary);
+    margin: 0;
+}
+
+/* =============================================
+   BREAK SECTION (cb1)
+   ============================================= */
+
+section.cb1 {
+    font-family: var(--font-heading);
+}
+
+section.cb1 .infos-events {
+    font-family: var(--font-heading);
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+section.cb1 a {
+    font-family: var(--font-heading);
+    font-weight: 500;
+}
+
+/* =============================================
+   PROGRAMME (cs3)
+   ============================================= */
+
+section.cs3 {
+    font-family: var(--font-heading);
+    background-color: var(--color-bg);
+}
+
+section.cs3 h1 {
+    font-family: var(--font-display);
+    font-weight: 700;
+    color: var(--color-primary);
+    letter-spacing: -0.5px;
+    font-size: clamp(2.2rem, 6vw, 3rem);
+}
+
+/* timeline styling overrides for consistency */
+.timeline::before {
+    background: var(--color-primary);
+}
+
+.timeline-content {
+    font-family: var(--font-heading);
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--color-primary);
+}
+
+.timeline-time {
+    font-family: var(--font-heading);
+    color: var(--color-primary);
+    font-size: 1rem;
+}
+
+.timeline-content span {
+    font-weight: 600;
+    color: var(--color-accent);
+}
+
+.timeline-content::before {
+    background: var(--color-primary);
+}
+
+.timeline-content span::before {
+    border-color: var(--color-primary);
+}
+
+/* =============================================
+   MENU (cs4)
+   ============================================= */
+
+section.cs4 {
+    font-family: var(--font-heading);
+    background-color: var(--color-bg-light);
+}
+
+section.cs4 h1 {
+    font-family: var(--font-display);
+    font-weight: 700;
+    color: var(--color-primary);
+    letter-spacing: -0.5px;
+    font-size: clamp(2.2rem, 6vw, 3rem);
+}
+
+.menu-wrapper {
+    font-family: var(--font-heading);
+    color: var(--color-primary);
+}
+
+.menu-wrapper>div {
+    font-size: 1rem;
+}
+
+.menu-wrapper>div p {
+    font-family: var(--font-display);
+    color: var(--color-accent);
+    font-size: clamp(1.4rem, 4vw, 1.8rem);
+    font-weight: 700;
+    text-shadow: none;
+}
+
+.menu_plats {
+    font-family: var(--font-heading);
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: var(--color-primary);
+    font-weight: 400;
+}
+
+/* =============================================
+   PLAN DE SALLE (cs5)
+   ============================================= */
+
+section.cs5 {
+    font-family: var(--font-heading);
+    background-color: var(--color-bg-soft);
+}
+
+section.cs5 h1 {
+    font-family: var(--font-display);
+    font-weight: 700;
+    color: var(--color-primary);
+    letter-spacing: -0.5px;
+    font-size: clamp(2.2rem, 6vw, 3rem);
+}
+
+/* guest-card styling */
+.guest-card {
+    font-family: var(--font-heading);
+}
+
+.guest-name {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    color: var(--color-primary);
+}
+
+.table-info {
+    font-family: var(--font-heading);
+    color: var(--color-primary);
+}
+
+.table-name {
+    color: var(--color-accent);
+    font-weight: 700;
+}
+
+#table-number {
+    background-color: var(--color-primary);
+}
+
+.group-size {
+    font-family: var(--font-heading);
+}
+
+/* =============================================
+   GALLERY (cs_gallery)
+   ============================================= */
+
+section.cs_gallery {
+    font-family: var(--font-heading);
+}
+
+section.cs_gallery h1 {
+    font-family: var(--font-display);
+    font-weight: 700;
+    color: var(--color-primary);
+    font-size: clamp(2.2rem, 6vw, 3rem);
+}
+
+section.cs_gallery .gallery-subtitle {
+    font-family: var(--font-heading);
+    color: var(--color-accent);
+    font-weight: 300;
+    letter-spacing: 1px;
+}
+
+.gallery-item-overlay {
+    background: rgba(75, 2, 9, 0.75);
+}
+
+.gallery-item-overlay p {
+    font-family: var(--font-heading);
+}
+
+/* =============================================
+   MERCI (cs6)
+   ============================================= */
+
+section.cs6 {
+    font-family: var(--font-heading);
+}
+
+section.cs6 .thanks-box h1 {
+    font-family: var(--font-cursive) !important;
+    color: var(--color-primary) !important;
+}
+
+section.cs6 .thanks-box p {
+    font-family: var(--font-heading);
+    color: var(--color-primary);
+    font-size: 1.1rem;
+    font-weight: 400;
+    letter-spacing: 0.5px;
+}
+
+section.cs6 .thanks-box .dons {
+    font-family: var(--font-heading);
+}
+
+section.cs6 .thanks-box .noms_m {
+    font-family: var(--font-cursive);
+    color: var(--color-primary);
+}
+
+/* =============================================
+   OVERLAY / MESSAGE BOX
+   ============================================= */
+
+.message-box {
+    font-family: var(--font-heading);
+}
+
+.message-box button {
+    background: var(--color-primary);
+    font-family: var(--font-heading);
+    font-weight: 600;
+}
+
+.message-box button:hover {
+    background: #6b0310;
+}
+
+/* =============================================
+   RESPONSIVE
+   ============================================= */
+
+@media (max-width: 768px) {
+    section.carte_header {
+        padding: 50px 20px;
+        justify-content: center;
+    }
+    
+    section.carte_header .header-content {
+        align-items: center;
+        text-align: center;
+    }
+    
+    .congrats-container {
+        align-items: center;
+    }
+    
+    .job-title {
+        margin-left: 0;
+    }
+    
+    .quote-container {
+        padding-left: 0;
+        margin-top: 40px;
+    }
+    
+    .quote-container .quote-icon {
+        left: 50%;
+        transform: translateX(-50%);
+        top: -50px;
+    }
+}
+
+@media (min-width: 1024px) {
+    section.cs3 h1,
+    section.cs4 h1,
+    section.cs5 h1,
+    section.cs_gallery h1 {
+        font-size: 3.5rem;
+    }
+}

@@ -1,5 +1,28 @@
-* {
+:root {
+    --color-primary: #4b0209;
+    --color-primary-dark: #0b3d2e;
+    --color-accent: #bd8128;
+    --color-accent-gold: #d4af37;
+    --color-accent-soft: #ffd54f;
+    --color-bg: #f8eeed;
+    --color-bg-light: #fdfffe;
+    --color-bg-soft: #f8f8f8;
+    --color-white: #ffffff;
+    --color-text-muted: #333;
+    --color-text-soft: #555;
+    --color-overlay: rgba(0, 0, 0, 0.6);
+    --color-shadow: rgba(0, 0, 0, 0.2);
+    --color-shadow-strong: rgba(11, 61, 46, .4);
+    --color-danger: #ff5c5c;
+    --color-danger-hover: #e64c4c;
+    --color-muted: #b9b9b9;
+    --color-teal: #b20c0c;
+    --color-map-heading: #2c3e50;
+    --color-gray-dark: #3d2218;
+    --color-black: #000000;
+}
 
+* {
     margin: 0;
 }
 
@@ -21,7 +44,7 @@ html {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.6);
+    background: var(--color-overlay);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -30,24 +53,24 @@ html {
 
 /* Boîte du message */
 .message-box {
-    background: white;
+    background: var(--color-white);
     padding: 25px 35px;
     border-radius: 12px;
     text-align: center;
     font-family: "Poppins", sans-serif;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 12px var(--color-shadow);
     animation: fadeIn 0.4s ease;
 }
 
 .message-box p {
     margin-bottom: 20px;
     font-size: 1.1rem;
-    color: #333;
+    color: var(--color-text-muted);
 }
 
 .message-box button {
-    background: #ff5c5c;
-    color: white;
+    background: var(--color-danger);
+    color: var(--color-white);
     border: none;
     padding: 10px 20px;
     font-size: 1rem;
@@ -57,7 +80,7 @@ html {
 }
 
 .message-box button:hover {
-    background: #e64c4c;
+    background: var(--color-danger-hover);
 }
 
 @keyframes fadeIn {
@@ -92,25 +115,67 @@ section.carte_section {
 }
 
 section.carte_header {
-    font-family: 'Tangerine', 'Great Vibes';
-    /* background-image: url('../images/minimalist-wedding-wicker-design2.jpg'), linear-gradient(#ffffff, #2b3d0b); */
-    background-image: url('../images/minimalist-wedding-wicker-design2.jpg');
-    background-size: 1000px;
-    background-position: center;
+    font-family: 'Tangerine', 'Great Vibes'; 
+    background-image: url('../images/photo-jeni.png');
+    background-size: 100%;
+    background-position: right bottom;
     background-repeat: no-repeat;
+    background-color: var(--color-bg);
     text-align: center;
-    color: #0b3d2e;
+    color: var(--color-primary);
     background-blend-mode: multiply;
-    min-height: 100vh !important;
+    max-height: 100vh !important;
     position: relative;
+    overflow: hidden;
 }
 
+section.carte_header .confetti-layer {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 0;
+}
+
+section.carte_header .confetti-piece {
+    position: absolute;
+    top: -12vh;
+    display: block;
+    opacity: 0;
+    border-radius: 2px;
+    transform: translate3d(0, 0, 0);
+    animation: confetti-fall var(--duration) linear infinite;
+    animation-delay: var(--delay);
+    will-change: transform, opacity;
+}
+
+section.carte_header .confetti-piece:nth-child(odd) {
+    background: linear-gradient(135deg, #8b4513 0%, #d4af37 100%);
+}
+
+section.carte_header .confetti-piece:nth-child(even) {
+    background: linear-gradient(135deg, #a0522d 0%, #ffd54f 100%);
+}
+
+@keyframes confetti-fall {
+    0% {
+        transform: translate3d(var(--x-start), -12vh, 0) rotate(0deg);
+        opacity: 0;
+    }
+    10% {
+        opacity: 1;
+    }
+    100% {
+        transform: translate3d(var(--x-end), 112vh, 0) rotate(720deg);
+        opacity: 0;
+    }
+}
 
 section.carte_header h1 {
     font-size: 3rem;
     font-weight: 700;
     margin-bottom: 40px;
-    text-shadow: #000000 0px 10px 10px;
+    text-shadow: var(--color-black) 0px 10px 10px;
     position: absolute;
     left: 47%;
     top: 53%;
@@ -134,7 +199,7 @@ section.cs2 {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    color: #0b3d2e;
+    color: var(--color-primary-dark);
     padding: 30px 30px;
     font-size: 2rem;
     font-weight: 700;
@@ -157,7 +222,7 @@ section.cs2 p {
 
 section.cs2 .nomInvite {
     font-weight: 600;
-    color: #0b3d2e;
+    color: var(--color-primary-dark);
 }
 
 
@@ -174,13 +239,13 @@ section.cb1 {
     background-position: center;
     background-repeat: no-repeat;
     background-blend-mode: multiply;
-    background-image: url('../images/nice-bouquet-with-white-pink-flowers.jpg'), linear-gradient(#ffffff, #5e5e5e);
+    background-image: url('../images/close-up-people-graduating-with-diplomas.jpg'), linear-gradient(var(--color-white), var(--color-primary));
     /* background-image: url('../images/nice-bouquet-with-white-pink-flowers.jpg'); */
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    color: #ffffff;
+    color: var(--color-white);
 }
 
 section.cb1 .event-location {
@@ -199,12 +264,12 @@ section.cb1 img {
 
 section.cb1 .event-location:hover img,
 section.cb1 .event-location:hover a {
-    color: #b9b9b9;
+    color: var(--color-muted);
 }
 
 section.cb1 a {
     text-decoration: none;
-    color: #ffffff;
+    color: var(--color-white);
     /* color: #ffbb00; */
     font-size: 1.5rem;
     text-align: center;
@@ -214,36 +279,6 @@ section.cb1 a {
     flex-direction: column;
 }
 
-/* 
-
-section.cb1 #confirm-presence {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    font-size: 1rem;
-}
-
-section.cb1 button {
-    width: auto;
-    padding: 10px;
-    border: 1px solid #ffffff;
-    background-color: #ffffff00;
-    color: #ffffff;
-    font-size: 1.2rem;
-    cursor: pointer;
-    transition: all 0.3s;
-    margin-top: 10px;
-    font-weight: 700;
-}
-
-section.cb1 button:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 7px 20px rgba(0, 0, 0, 0.4);
-    color: #ffffff;
-} */
 
 section.cb1 .infos-events {
     width: 65%;
@@ -302,7 +337,7 @@ section.cs3 img {
 
 section.cs3 h1 {
     text-align: center;
-    color: #0b3d2e;
+    color: var(--color-primary);
     font-size: 2.6rem;
     font-weight: 700;
 
@@ -321,7 +356,7 @@ section.cs3 h1 {
     bottom: 0;
     width: 2px;
     /* background: #FFD700; */
-    background: #0b3d2e;
+    background: var(--color-primary);
     transform: translateX(-50%);
 }
 
@@ -341,7 +376,7 @@ section.cs3 h1 {
     text-align: right;
     padding-right: 40px;
     font-weight: 700;
-    color: #0b3d2e;
+    color: var(--color-primary);
     font-size: 1.8rem;
     display: flex;
     align-items: center;
@@ -365,7 +400,7 @@ section.cs3 h1 {
     padding-left: 40px;
     font-size: 1.5rem;
     position: relative;
-    color: #0b3d2e;
+    color: var(--color-primary);
     font-weight: 700;
     /* white-space: nowrap; */
 }
@@ -384,7 +419,7 @@ section.cs3 h1 {
 .timeline-content span::before {
     content: "";
     width: 70px;
-    border-top: #0b3d2e 1px solid;
+    border-top: var(--color-primary) 1px solid;
     float: left;
     margin-top: 15px;
 }
@@ -406,7 +441,7 @@ section.cs3 h1 {
     top: 50%;
     width: 10px;
     height: 10px;
-    background: #0b3d2e;
+    background: var(--color-primary);
     border-radius: 50%;
     transform: translateY(-50%);
 }
@@ -426,7 +461,7 @@ section.cs4 {
     padding: 30px;
     position: relative;
     font-family: 'Tangerine', 'Great Vibes';
-    background-color: #fdfffe;
+    background-color: var(--color-bg-light);
     overflow: hidden;
 }
 
@@ -460,7 +495,7 @@ section.cs4 .menu-floral.f2 {
 /* Titre */
 section.cs4 h1 {
     font-size: 3rem;
-    color: #000000;
+    color: var(--color-primary);
     margin-bottom: 30px;
     text-align: center;
 }
@@ -470,7 +505,7 @@ section.cs4 h1 {
     width: 100%;
     /* max-width: 800px; */
     margin-bottom: 40px;
-    color: #000000;
+    color: var(--color-primary);
     display: flex;
     justify-content: space-around;
     align-items: top;
@@ -491,8 +526,8 @@ section.cs4 h1 {
 }
 
 .menu-wrapper>div p {
-    color: #bd8128;
-    text-shadow: 0px 0px 1px #bd8128;
+    color: var(--color-accent);
+    text-shadow: 0px 0px 1px var(--color-accent);
     font-size: 3rem;
     font-weight: 700;
 }
@@ -516,14 +551,14 @@ section.cs5 {
     align-items: center;
     flex-direction: column;
     font-family: 'Tangerine', 'Great Vibes';
-    background-color: #f8f8f8;
+    background-color: var(--color-bg-soft);
     position: relative;
     overflow: hidden;
 }
 
 section.cs5 h1 {
     font-size: 3rem;
-    color: #0b3d2e;
+    color: var(--color-primary);
     margin-bottom: 20px;
     text-align: center;
 }
@@ -561,7 +596,7 @@ section.cs5 div {
 .table-info {
     border-radius: 15px;
     text-align: center;
-    color: #0b3d2e;
+    color: var(--color-primary);
     margin: 20px;
     font-family: sans-serif;
 }
@@ -570,25 +605,25 @@ section.cs5 div {
     font-size: 1.4rem;
     font-weight: 700;
     margin-bottom: 8px;
-    color: #0b3d2e;
+    color: var(--color-primary);
 }
 .table-name {
     font-size: 1.2rem;
     font-weight: 600;
-    color: #0b3d2e;
+    color: var(--color-primary);
 }
 
 #table-number {
     font-size: 24px;
     font-weight: bold;
-    color: #ffffff;
+    color: var(--color-white);
     display: flex;
     justify-content: center;
     align-items: center;
     width: 60px !important;
     height: 60px;
     border-radius: 50%;
-    background-color: #0b3d2e;
+    background-color: var(--color-primary-dark);
     /* background-color: #dbba00; */
 }
 
@@ -596,7 +631,7 @@ section.cs5 div {
     width: 130px !important;
     height: 130px;
     margin-top: 10px;
-    background-color: #ffffff;
+    background-color: var(--color-white);
     border-radius: 10px;
     /* border:1px solid #0b3d2e; */
 }
@@ -611,7 +646,7 @@ section.cs5 div {
 
 .guest-card p {
     margin: 5px 0;
-    color: #555;
+    color: var(--color-text-soft);
 }
 
 
@@ -630,7 +665,7 @@ section.cs5 div {
 }
 
 .maps h2 {
-    color: #2c3e50;
+    color: var(--color-map-heading);
     margin-bottom: 15px;
     font-family: "Tangerine", "Great Vibes";
     font-weight: 700;
@@ -640,9 +675,11 @@ section.cs5 div {
 /* cs6 */
 
 section.cs6 {
-    background-image: url('../images/top-view-flowers-with-copy-space.jpg');
+    background-image: url('../images/gradution-diploma-toga-hat.jpg');
     background-size: cover;
+    background-repeat: no-repeat;
     position: relative;
+    background-position: bottom;
     min-height: 90vh !important;
     display: flex;
     align-items: center;
@@ -658,14 +695,14 @@ section.cs6 .thanks-box h1 {
     font-family: 'Great Vibes';
     font-size: 25vw;
     /* color: rgb(70, 70, 70); */
-    color: #309c80 !important;
+    color: var(--color-teal) !important;
     white-space: nowrap;
 }
 
 section.cs6 .thanks-box p {
     /* font-family:'Poppins', sans-serif; */
     font-size: 20px;
-    color: rgb(70, 70, 70);
+    color: var(--color-gray-dark);
     font-weight: 700;
 }
 
@@ -701,15 +738,14 @@ section.cs6 .thanks-box .noms_m {
     }
 
     section.carte_header {
-        /* background-color: #efeff1; */
-        background-size: 1500px;
+        background-size: contain;
     }
 
     section.carte_header h1 {
         font-size: 5rem;
         font-weight: 700;
         margin-bottom: 40px;
-        text-shadow: #000000 0px 10px 10px;
+        text-shadow: var(--color-black) 0px 10px 10px;
         position: absolute;
         left: 47%;
         top: 53%;
@@ -741,8 +777,8 @@ section.cs6 .thanks-box .noms_m {
 
     section.cb1 button:hover {
         transform: translateY(-2px);
-        box-shadow: 0 7px 20px rgba(11, 61, 46, .4);
-        color: #ffffff;
+        box-shadow: 0 7px 20px var(--color-shadow-strong);
+        color: var(--color-white);
     }
 
     section.cb1 .infos-events {
