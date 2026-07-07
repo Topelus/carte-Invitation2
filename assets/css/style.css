@@ -194,7 +194,6 @@ section.carte_header svg {
 /* cs2 */
 section.cs2 {
     font-family: 'Tangerine';
-    /* display: flex; */
     display: none;
     flex-direction: column;
     align-items: center;
@@ -239,7 +238,7 @@ section.cb1 {
     background-position: center;
     background-repeat: no-repeat;
     background-blend-mode: multiply;
-    background-image: url('../images/close-up-people-graduating-with-diplomas.jpg'), linear-gradient(var(--color-white), var(--color-primary));
+    background-image: url('../images/close-up-people-graduating-with-diplomas.png'), linear-gradient(var(--color-white), var(--color-primary));
     /* background-image: url('../images/nice-bouquet-with-white-pink-flowers.jpg'); */
     display: flex;
     justify-content: center;
@@ -733,7 +732,7 @@ section.cs6 .thanks-box .noms_m {
 
     section.carte_section {
         width: 100%;
-        padding: 30px 150px;
+        /* padding: 30px 150px; */
         box-sizing: border-box;
     }
 
