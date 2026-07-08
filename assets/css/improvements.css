@@ -87,12 +87,12 @@ section.carte_header .header-content {
     font-family: var(--font-heading);
     font-size: clamp(1.1rem, 4vw, 1.6rem);
     font-weight: 500;
-    color: var(--color-primary);   
+    color: var(--color-primary);
     text-shadow:
-    1px 1px 0 #ffffff,
-  -1px -1px 0 #ffffff,  
-   1px -1px 0 #ffffff,
-   0px 1px 0 #ffffff;
+        1px 1px 0 #ffffff,
+        -1px -1px 0 #ffffff,
+        1px -1px 0 #ffffff,
+        0px 1px 0 #ffffff;
     margin-left: 15px;
     margin-bottom: 3%;
     letter-spacing: 0.5px;
@@ -127,12 +127,12 @@ section.carte_header .header-content {
     font-size: clamp(0.95rem, 3vw, 1.15rem);
     font-weight: 700;
     line-height: 1.6;
-    color: var(--color-primary);   
+    color: var(--color-primary);
     text-shadow:
-    1px 1px 0 #ffffff,
-  -1px -1px 0 #ffffff,  
-   1px -1px 0 #ffffff,
-   0px 1px 0 #ffffff;
+        1px 1px 0 #ffffff,
+        -1px -1px 0 #ffffff,
+        1px -1px 0 #ffffff,
+        0px 1px 0 #ffffff;
     margin: 0;
 }
 
@@ -331,12 +331,22 @@ section.cs6 {
 
 section.cs6 .thanks-box h1 {
     font-family: var(--font-cursive) !important;
-    color: var(--color-black) !important;
+    color: var(--color-primary) !important;
+    text-shadow:
+        3px 3px 0 #ffffff,
+        -3px -3px 0 #ffffff,
+        3px -3px 0 #ffffff,
+        -3px 3px 0 #ffffff;
 }
 
 section.cs6 .thanks-box p {
     font-family: var(--font-heading);
-    color: var(--color-black);
+    color: var(--color-primary);
+    text-shadow:
+        1px 1px 0 #ffffff,
+        -1px -1px 0 #ffffff,
+        1px -1px 0 #ffffff,
+        0px 1px 0 #ffffff;
     font-size: 1.1rem;
     font-weight: 400;
     letter-spacing: 0.5px;
@@ -437,7 +447,8 @@ section.cs6 .thanks-box .noms_m {
     section.cs_gallery h1 {
         font-size: 3.5rem;
     }
+
     .congrats-container {
-    margin-bottom: 20px;
-}
+        margin-bottom: 20px;
+    }
 }
