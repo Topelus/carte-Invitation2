@@ -117,7 +117,7 @@ section.carte_section {
 section.carte_header {
     font-family: 'Tangerine', 'Great Vibes'; 
     background-image: url('../images/photo-jeni.png');
-    background-size: 100%;
+    background-size: contain;
     background-position: right bottom;
     background-repeat: no-repeat;
     background-color: var(--color-bg);
