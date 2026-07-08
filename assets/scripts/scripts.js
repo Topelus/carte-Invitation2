@@ -65,7 +65,7 @@ const guestId = getQueryParam('id');
 const eventId = getQueryParam('eventId');
 
 if (guestId && eventId) {
-    fetch(`https://carte-invitation.onrender.com/assets/scripts/api.php?id=${encodeURIComponent(guestId)}&eventId=${encodeURIComponent(eventId)}`)
+    fetch(`https://soutenance-jenifer-ahahnhanzo-glele.onrender.com/assets/scripts/api.php?id=${encodeURIComponent(guestId)}&eventId=${encodeURIComponent(eventId)}`)
         .then(response => response.json())
         .then(data => {
             if (data.error) {
@@ -83,9 +83,9 @@ if (guestId && eventId) {
 
             // // Colorer la bonne table
             const elementsToColor = document.querySelectorAll(".cls-1.T" + numero);
-            const tableNumber = document.querySelectorAll(".cls-3.T" + numero + ", .cls-4.T" + numero );
+            const tableNumber = document.querySelectorAll(".cls-3.T" + numero + ", .cls-4.T" + numero);
             elementsToColor.forEach(el => el.style.fill = "#ffbb00");
-            tableNumber.forEach(tn => {tn.style.fill = "#cf6400";});
+            tableNumber.forEach(tn => { tn.style.fill = "#cf6400"; });
 
             // Générer le QR code (avec la librairie QRCode.js par exemple)
             new QRCode(document.querySelector('.qrcode'), {
